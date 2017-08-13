@@ -2,7 +2,9 @@ package com.zakariachowdhury.darkskyclient;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,8 +23,11 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.tempTextView)
-    TextView tempTextView;
+    @BindView(R.id.temperatureContainer)
+    LinearLayout temperatureContainer;
+
+    @BindView(R.id.temperatureTextView)
+    TextView temperatureTextView;
 
     @BindView(R.id.summaryTextView)
     TextView summaryTextView;
@@ -53,8 +58,9 @@ public class MainActivity extends AppCompatActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(WeatherEvent weatherEvent) {
         Currently currently = weatherEvent.getWeather().getCurrently();
-        tempTextView.setText(String.valueOf(Math.round(currently.getTemperature())));
+        temperatureTextView.setText(String.valueOf(Math.round(currently.getTemperature())));
         summaryTextView.setText(currently.getSummary());
+        temperatureContainer.setVisibility(View.VISIBLE);
 
         String icon = currently.getIcon();
         if (WeatherIconUtil.ICONS.get(icon) != null) {
