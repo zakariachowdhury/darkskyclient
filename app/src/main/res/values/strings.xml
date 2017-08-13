@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DarkSkyClient</string>
+    <string name="app_name">Dark Sky Client</string>
     <string name="error_weather_response">No weather data found</string>
     <string name="error_weather_callback_failure">Unable to get weather data</string>
 </resources>

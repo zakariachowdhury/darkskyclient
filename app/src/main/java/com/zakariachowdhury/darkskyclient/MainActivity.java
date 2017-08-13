@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getLocation() {
-        WeatherApi weatherApi = new WeatherApi();
+        WeatherApi weatherApi = new WeatherApi(this);
         weatherApi.getWeather(42.6340327, -83.2184753);
     }
 }
