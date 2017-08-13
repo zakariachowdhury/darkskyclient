@@ -2,6 +2,7 @@ package com.zakariachowdhury.darkskyclient;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -9,6 +10,7 @@ import com.zakariachowdhury.darkskyclient.event.ErrorEvent;
 import com.zakariachowdhury.darkskyclient.event.WeatherEvent;
 import com.zakariachowdhury.darkskyclient.model.Currently;
 import com.zakariachowdhury.darkskyclient.service.WeatherApi;
+import com.zakariachowdhury.darkskyclient.util.WeatherIconUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -21,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.tempTextView)
     TextView tempTextView;
+
+    @BindView(R.id.summaryTextView)
+    TextView summaryTextView;
+
+    @BindView(R.id.iconImageView)
+    ImageView iconImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
     public void onEvent(WeatherEvent weatherEvent) {
         Currently currently = weatherEvent.getWeather().getCurrently();
         tempTextView.setText(String.valueOf(Math.round(currently.getTemperature())));
+        summaryTextView.setText(currently.getSummary());
+
+        String icon = currently.getIcon();
+        if (WeatherIconUtil.ICONS.get(icon) != null) {
+            iconImageView.setImageResource(WeatherIconUtil.ICONS.get(icon));
+        }
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
