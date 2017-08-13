@@ -20,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class WeatherApi {
-    private static final String BASE_URL = "https://api.darksky.net/forecast/e70540659086436bbc38ee21bc37cbd8/";
+    private static final String BASE_URL = "https://api.darksky.net/forecast/7e87d17a004526d5f1ff090ae5eb689e/";
     private Retrofit retrofit;
 
     private Retrofit getRetrofit() {
