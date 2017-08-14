@@ -2,4 +2,5 @@
     <string name="app_name">Dark Sky Client</string>
     <string name="error_weather_response">No weather data found</string>
     <string name="error_weather_callback_failure">Unable to get weather data</string>
+    <string name="error_google_map_api">Unable to get device location</string>
 </resources>
