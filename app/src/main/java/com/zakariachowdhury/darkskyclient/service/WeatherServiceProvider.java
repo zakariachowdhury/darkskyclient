@@ -20,12 +20,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Zakaria Chowdhury on 8/12/17.
  */
 
-public class WeatherApi {
+public class WeatherServiceProvider {
     private static final String BASE_URL = "https://api.darksky.net/forecast/7e87d17a004526d5f1ff090ae5eb689e/";
     private Context context;
     private Retrofit retrofit;
 
-    public WeatherApi(Context context) {
+    public WeatherServiceProvider(Context context) {
         this.context = context;
     }
 

@@ -21,7 +21,7 @@ import com.google.android.gms.location.LocationServices;
 import com.zakariachowdhury.darkskyclient.event.ErrorEvent;
 import com.zakariachowdhury.darkskyclient.event.WeatherEvent;
 import com.zakariachowdhury.darkskyclient.model.Currently;
-import com.zakariachowdhury.darkskyclient.service.WeatherApi;
+import com.zakariachowdhury.darkskyclient.service.WeatherServiceProvider;
 import com.zakariachowdhury.darkskyclient.util.WeatherIconUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -95,8 +95,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             double lat = mLastKnownLocation.getLatitude();
             double lng = mLastKnownLocation.getLongitude();
 
-            WeatherApi weatherApi = new WeatherApi(this);
-            weatherApi.getWeather(lat, lng);
+            WeatherServiceProvider weatherServiceProvider = new WeatherServiceProvider(this);
+            weatherServiceProvider.getWeather(lat, lng);
         } else {
             Toast.makeText(this, R.string.error_google_map_api, Toast.LENGTH_LONG).show();
         }
