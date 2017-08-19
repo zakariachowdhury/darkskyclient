@@ -17,16 +17,16 @@ public class Currently {
     private String icon;
     @SerializedName("nearestStormDistance")
     @Expose
-    private Integer nearestStormDistance;
+    private Double nearestStormDistance;
     @SerializedName("nearestStormBearing")
     @Expose
-    private Integer nearestStormBearing;
+    private Double nearestStormBearing;
     @SerializedName("precipIntensity")
     @Expose
-    private Integer precipIntensity;
+    private Double precipIntensity;
     @SerializedName("precipProbability")
     @Expose
-    private Integer precipProbability;
+    private Double precipProbability;
     @SerializedName("temperature")
     @Expose
     private Double temperature;
@@ -50,7 +50,7 @@ public class Currently {
     private Integer windBearing;
     @SerializedName("visibility")
     @Expose
-    private Integer visibility;
+    private Double visibility;
     @SerializedName("cloudCover")
     @Expose
     private Double cloudCover;
@@ -88,35 +88,35 @@ public class Currently {
         this.icon = icon;
     }
 
-    public Integer getNearestStormDistance() {
+    public Double getNearestStormDistance() {
         return nearestStormDistance;
     }
 
-    public void setNearestStormDistance(Integer nearestStormDistance) {
+    public void setNearestStormDistance(Double nearestStormDistance) {
         this.nearestStormDistance = nearestStormDistance;
     }
 
-    public Integer getNearestStormBearing() {
+    public Double getNearestStormBearing() {
         return nearestStormBearing;
     }
 
-    public void setNearestStormBearing(Integer nearestStormBearing) {
+    public void setNearestStormBearing(Double nearestStormBearing) {
         this.nearestStormBearing = nearestStormBearing;
     }
 
-    public Integer getPrecipIntensity() {
+    public Double getPrecipIntensity() {
         return precipIntensity;
     }
 
-    public void setPrecipIntensity(Integer precipIntensity) {
+    public void setPrecipIntensity(Double precipIntensity) {
         this.precipIntensity = precipIntensity;
     }
 
-    public Integer getPrecipProbability() {
+    public Double getPrecipProbability() {
         return precipProbability;
     }
 
-    public void setPrecipProbability(Integer precipProbability) {
+    public void setPrecipProbability(Double precipProbability) {
         this.precipProbability = precipProbability;
     }
 
@@ -176,11 +176,11 @@ public class Currently {
         this.windBearing = windBearing;
     }
 
-    public Integer getVisibility() {
+    public Double getVisibility() {
         return visibility;
     }
 
-    public void setVisibility(Integer visibility) {
+    public void setVisibility(Double visibility) {
         this.visibility = visibility;
     }
 
